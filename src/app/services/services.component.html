@@ -1,0 +1,25 @@
+<section>
+  <div class="container text-center">
+    <!--Section heading-->
+    <h2 class="h1 py-5 font-weight-bold">{{ servicesName }}</h2>
+    <!--Section description-->
+    <p class="px-5 mb-5 pb-3 lead grey-text">{{ servicesDetails }}</p>
+
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-4" *ngFor="let item of services">
+        <i [ngClass]="['fas',item.icon, 'fa-3x orange-text']"></i>
+        <h5 class="font-weight-bold mt-3">{{ item.name }}</h5>
+        <p class="grey-text">
+          {{ item.description }}
+        </p>
+      </div>
+      <!--Grid column-->
+
+
+    </div>
+    <!--Grid row-->
+  </div>
+</section>

@@ -1,0 +1,36 @@
+<!-- Section: Team v.3 -->
+<section class="container team-section">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">Nuestro Equipo</h2>
+    <!-- Section description -->
+    <p class="grey-text text-center w-responsive mx-auto mb-5">Desarrollamos software para tu empresa o proyecto, de acuerdo a tus necesidades y con la funcionalidad que tú quieras. Confeccionamos desde paneles de administración, geolocalización, controles de inventario y bases de datos, hasta aplicativos iOS, Android y páginas web interactivas.</p>
+  
+    <!-- Grid row-->
+    <div class="row text-center text-md-left">
+      <div class="col-md-4" *ngFor="let person of team">
+        <div class="card-person">
+          <div class="view">
+            <!-- Card img -->
+            <img [src]="person.photo" alt="Card image cap">
+            <a>
+              <div class="mask"></div>
+            </a>
+          </div>
+          <!--Card content-->
+          <div class="card-description">
+            <!--Name-->
+            <h3>{{ person.name }}</h3>
+            <h5>{{ person.description }}</h5>
+          </div>
+          <div class="card-jobs">
+            <a [href]="person.facebook"><mdb-icon fas icon="facebook" size="lg"></mdb-icon></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Grid row-->
+  
+  </section>
+  <!-- Section: Team v.3 -->

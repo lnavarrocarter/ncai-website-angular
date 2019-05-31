@@ -1,0 +1,12 @@
+.navbar-ncai {
+    background-color: transparent;
+    z-index: 1;
+}
+.top-nav-collapse {
+    background-color: #d94715;
+}
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #d94715;
+    }
+}

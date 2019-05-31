@@ -1,0 +1,18 @@
+.view {
+    background: url("./../../assets/img/media.png")no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    z-index: -1;
+}
+
+@media (min-width: 768px) {
+    .view {
+        overflow: visible;
+        margin-top: -56px;
+    }
+}
+
+.logo-ncai{
+    width: 40vh;
+    margin: auto;
+}
