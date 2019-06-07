@@ -12,6 +12,9 @@ import { MainComponent } from './main/main.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { TeamComponent } from './team/team.component';
 import { ServicesComponent } from './services/services.component';
+import { HostingComponent } from './hosting/hosting.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { ServicesComponent } from './services/services.component';
     MainLayoutComponent,
     TeamComponent,
     ServicesComponent,
+    HostingComponent,
+    ProjectsComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

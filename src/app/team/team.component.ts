@@ -33,14 +33,6 @@ export class TeamComponent implements OnInit {
         linkedin: '#',
         facebook : '#',
 
-      },
-      {
-        name : 'Matias data',
-        description : 'Desarrollador Back-End',
-        photo : 'assets/img/team/mati.jpg',
-        linkedin: '#',
-        facebook : '#',
-
       }
     ]
   }

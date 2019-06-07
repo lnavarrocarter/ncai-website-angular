@@ -1,25 +1,53 @@
-<section>
-  <div class="container text-center">
-    <!--Section heading-->
-    <h2 class="h1 py-5 font-weight-bold">{{ servicesName }}</h2>
-    <!--Section description-->
-    <p class="px-5 mb-5 pb-3 lead grey-text">{{ servicesDetails }}</p>
 
-    <!--Grid row-->
-    <div class="row">
+<!--Section: about-->
+<section id="about" class="py-5">
 
-      <!--Grid column-->
-      <div class="col-md-4" *ngFor="let item of services">
-        <i [ngClass]="['fas',item.icon, 'fa-3x orange-text']"></i>
-        <h5 class="font-weight-bold mt-3">{{ item.name }}</h5>
-        <p class="grey-text">
-          {{ item.description }}
-        </p>
+  <!-- Container -->
+  <div class="container">
+      <!-- Section heading -->
+      <h2 class="h1-responsive font-weight-bold text-center mb-5">{{ servicesName }}</h2>
+      <!-- Section description -->
+      <p class="lead grey-text text-center w-responsive mx-auto mb-5">{{ servicesDetails }}</p>
+
+      <!-- Grid row -->
+      <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-lg-5 text-center text-lg-left">
+              <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="Sample image">
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-7">
+
+              <!-- Grid row -->
+              <div class="row mb-3" *ngFor="let item of services">
+
+                  <!-- Grid column -->
+                  <div class="col-1">
+                      <i class="fa fa-mail-forward fa-lg purple-text"></i>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-xl-10 col-md-11 col-10">
+                      <h5 class="font-weight-bold mb-3">{{ item.name }}</h5>
+                      <p class="grey-text">{{ item.description }}</p>
+                  </div>
+                  <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+          </div>
+          <!--Grid column-->
+
       </div>
-      <!--Grid column-->
+      <!-- Grid row -->
 
-
-    </div>
-    <!--Grid row-->
   </div>
+  <!-- Container -->
+
 </section>
+<!--Section: about-->
