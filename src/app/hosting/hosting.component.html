@@ -1,3 +1,40 @@
-<p>
-  hosting works!
-</p>
+<!--Section: projects-->
+<section id="hosting" class="py-5" style="background-color: #ea9a3d;">
+
+    <!-- Container -->
+    <div class="container">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center mb-5">Hosting y almacenamiento</h2>
+    <!-- Section description -->
+    <p class="lead grey-text text-center w-responsive mx-auto mb-5"></p>
+
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-7 text-center">
+        <div class="" *ngFor="let host of hosting">
+          <div class="animayed fadeOut" [hidden]="host.hidden">
+              {{host.plan}}
+              {{host.detalles }}
+          </div>
+        </div>
+        
+
+      </div>
+      <!--Grid column-->
+      <!-- Grid column -->
+      <div class="col-lg-5 text-center text-lg-left">
+          <img class="img-fluid" src="https://www.cloudberrylab.com/img/modules/overview/products/server.png" alt="Sample image">
+      </div>
+      <!-- Grid column -->
+
+
+      
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Container -->  
+</section>
+<!--Section: projects-->

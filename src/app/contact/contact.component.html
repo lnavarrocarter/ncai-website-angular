@@ -1,50 +1,52 @@
 <!--Section: Contact-->
-<section id="contact" class="py-5" style="background-color: /*#e78721*/#e79f19;">
-
+<section id="contact" class="py-5" style="background-color:#dc432c;">
+  <!-- Container -->
+  <div class="container"> 
    <!-- Section heading -->
-   <h2 class="h1-responsive text-white font-weight-bold text-center mb-5">{{ titulo }}</h2>
+   <h2 class="h1-responsive text-dark font-weight-bold text-center mb-5">{{ titulo }}</h2>
    <!-- Section description -->
-   <p class="lead grey-text text-light text-center w-responsive mx-auto mb-5">{{ detalles }}</p>
+   <p class="lead grey-text text-center w-responsive mx-auto mb-5">{{ detalles }}</p>
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-8 col-md-12 text-lg-left">
+        <!-- Form contact -->
+        <form class="p-5 grey-text">
 
-  <!--Grid column-->
-  <div class="col-lg-5 col-md-12">
-    <!-- Form contact -->
-    <form class="p-5 grey-text">
+          <div class="md-form form-sm"> <i class="fas fa-uservector prefix text-dark"></i>
+            <input type="text" id="form3" class="form-control form-control-sm" mdbInputDirective> 
+            <label for="form3" class="text-dark">Nombre</label>
+          </div>
 
-      <div class="md-form form-sm"> <i class="fas fa-user prefix text-dark"></i>
-        <input type="text" id="form3" class="form-control form-control-sm">
-        <label for="form3" class="text-white">Nombre</label>
-      </div>
+          <div class="md-form form-sm"> <i class="fas fa-envelope prefix text-dark"></i>
+            <input type="text" id="form2" class="form-control form-control-sm" mdbInputDirective>
+            <label for="form2" class="text-dark">Correo</label>
+          </div>
 
-      <div class="md-form form-sm"> <i class="fas fa-envelope prefix text-dark"></i>
-        <input type="text" id="form2" class="form-control form-control-sm">
-        <label for="form2" class="text-white">Correo</label>
-      </div>
+          <div class="md-form form-sm"> <i class="fas fa-tag prefix text-dark"></i>
+            <input type="text" id="form32" class="form-control form-control-sm" mdbInputDirective>
+            <label for="form34" class="text-dark">Asunto</label>
+          </div>
 
-      <div class="md-form form-sm"> <i class="fas fa-tag prefix text-dark"></i>
-        <input type="text" id="form32" class="form-control form-control-sm">
-        <label for="form34" class="text-white">Asunto</label>
+          <div class="md-form form-sm"> <i class="fas fa-pencil-alt prefix text-dark"></i>
+            <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4" mdbInputDirective></textarea>
+            <label for="form8" class="text-dark">Preguntanos!</label>
+          </div>
+          
+          <div class="text-center mt-4">
+            <button class="btn btn-info">Enviar <i class="far fa-paper-planeml-1"></i></button>
+          </div>
+        </form>
+        <!-- Form contact -->
       </div>
+      <!--Grid column-->
 
-      <div class="md-form form-sm"> <i class="fas fa-pencil-alt prefix text-dark"></i>
-        <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
-        <label for="form8" class="text-white">Preguntanos!</label>
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12">
+
+
       </div>
-      
-      <div class="text-center mt-4">
-        <button class="btn btn-info">Enviar <i class="far fa-paper-planeml-1"></i></button>
-      </div>
-    </form>
-    <!-- Form contact -->
+      <!--Grid column-->
+    </div>
   </div>
-  <!--Grid column-->
-
-  <!--Grid column-->
-  <div class="col-lg-7 col-md-12">
-
-
-  </div>
-  <!--Grid column-->
-
 </section>
 <!--Section: Contact-->
