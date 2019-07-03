@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  titulo: string;
-  detalles: string;
+  frases: string;
   constructor() { 
+    this.frases = "“La tecnología por sí sola no basta. También tenemos que poner el corazón” – Jane Goodall"
 
-    this.titulo = 'Contactanos!';
-    this.detalles = `¿Listo para comenzar tu proyecto o resolver
-tu problema con nosotros? Llámanos o escríbenos y nos prondremos en contacto contigo a la brevedad.`;
+    const arrayfrases = [
+      "“Si piensas que la tecnología puede solucionar tus problemas de seguridad, está claro que ni entiendes los problemas ni entiendes la tecnología”    –  Bruce Schneier",
+      "“Las personas siempre le temen al cambio. Le temían a la electricidad cuando fue inventada, ¿no es así?”.  – Bill Gates",
+      "“La clave del éxito en los negocios esta en detectar  hacia dónde va el mundo y llegar ahí primero”.  – Bill Gates",
+    ]
   }
 
   ngOnInit() {

@@ -1,23 +1,4 @@
-<!--Section: projects-->
-<section id="hosting" class="py-5 section-hosting">
-    <!-- Container -->
-    <div class="container">
-
-    <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold text-center mb-5">Hosting y almacenamiento</h2>
-    <!-- Section description -->
-    <p class="lead grey-text text-center w-responsive mx-auto mb-5"></p>
-
-      <div class="col-lg-12">
-          <img class="img-fluid" src="https://www.cloudberrylab.com/img/modules/overview/products/server.png" alt="Sample image">
-      </div>
-      <!-- Grid column -->
-  </div>
-  <!-- Container -->  
-</section>
-<!--Section: projects-->
-
-<section class="section section-lg pt-lg-0 mt--200">
+<section class="section section-lg pt-lg-0 mt--150">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-12">
@@ -26,17 +7,17 @@
           <div class="col-lg-4" *ngFor="let host of hosting">
             <div class="card card-lift--hover shadow border-0">
               <div class="card-body py-5">
-                <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                  <i class="ni ni-check-bold"></i>
+                <div [ngClass]="['icon', 'icon-shape',host.color[0], 'rounded-circle' ,'mb-4']">
+                  <i [ngClass]="host.icon"></i>
                 </div>
-                <h6 class="text-primary text-uppercase">{{ host.plan }}</h6>
+                 <div [ngClass]="[host.color[1],'']"><h1>{{host.valor}}</h1></div>{{ host.periodo }}
+                <h6 [ngClass]="[host.color[1], 'text-uppercase']">{{ host.plan }}</h6>
                 <p class="description mt-3">{{ host.detalles }}</p>
-                <div>
-                  <span class="badge badge-pill badge-primary">2 GB</span>
-                  <span class="badge badge-pill badge-primary">2 DB</span>
-                  <span class="badge badge-pill badge-primary">1 Dominio</span>
+                <div *ngFor="let detalle of host.caracteristicas">
+                  <span [ngClass]="['badge', 'badge-pill', host.color[2]]">{{detalle}}</span>
                 </div>
-                <a href="javascript:void(0)" class="btn btn-primary mt-4">Learn more</a>
+                
+                <a href="javascript:void(0)" class="btn btn-primary mt-4">Contratar</a>
               </div>
             </div>
           </div>

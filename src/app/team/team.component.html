@@ -1,36 +1,34 @@
-<!-- Section: Team v.3 -->
-<section class="container team-section">
-
-    <!-- Section heading -->
-    <h2 class="h1-responsive font-weight-bold text-center my-5">Nuestro Equipo</h2>
-    <!-- Section description -->
-    <p class="grey-text text-center w-responsive mx-auto mb-5">Desarrollamos software para tu empresa o proyecto, de acuerdo a tus necesidades y con la funcionalidad que tú quieras. Confeccionamos desde paneles de administración, geolocalización, controles de inventario y bases de datos, hasta aplicativos iOS, Android y páginas web interactivas.</p>
-  
-    <!-- Grid row-->
-    <div class="row text-center text-md-left">
-      <div class="col-md-4" *ngFor="let person of team">
-        <div class="card-person">
-          <div class="view">
-            <!-- Card img -->
-            <img [src]="person.photo" alt="image">
-            <a>
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--Card content-->
-          <div class="card-description">
-            <!--Name-->
-            <h3>{{ person.name }}</h3>
-            <h5>{{ person.description }}</h5>
-          </div>
-          <div class="card-jobs">
-            <a [href]="person.facebook"><mdb-icon fas icon="facebook" size="lg"></mdb-icon></a>
-          </div>
+<section class="section section-lg section-nucleo-icons pb-250">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="display-3">Planes de Hosting y servidores</h2>
         </div>
       </div>
-
+      <div class="blur--hover">
+          <div class="icons-container mt-5" data-toggle="on-screen">
+            <!-- Center -->
+            <i class="icon ni ni-diamond"></i>
+            <!-- Right 1 -->
+            <i class="icon icon-sm ni ni-album-2"></i>
+            <i class="icon icon-sm ni ni-app"></i>
+            <i class="icon icon-sm ni ni-atom"></i>
+            <!-- Right 2 -->
+            <i class="icon ni ni-bag-17"></i>
+            <i class="icon ni ni-bell-55"></i>
+            <i class="icon ni ni-credit-card"></i>
+            <!-- Left 1 -->
+            <i class="icon icon-sm ni ni-briefcase-24"></i>
+            <i class="icon icon-sm ni ni-building"></i>
+            <i class="icon icon-sm ni ni-button-play"></i>
+            <!-- Left 2 -->
+            <i class="icon ni ni-calendar-grid-58"></i>
+            <i class="icon ni ni-camera-compact"></i>
+            <i class="icon ni ni-chart-bar-32"></i>
+            
+          </div>
+          <app-hosting></app-hosting>
+      </div>
+      
     </div>
-    <!-- Grid row-->
-  
   </section>
-  <!-- Section: Team v.3 -->

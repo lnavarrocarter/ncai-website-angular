@@ -16,6 +16,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
+import { TeamComponent } from './team/team.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
