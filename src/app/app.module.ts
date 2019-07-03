@@ -15,6 +15,7 @@ import { HostingComponent } from './hosting/hosting.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     HostingComponent,
     ProjectsComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
