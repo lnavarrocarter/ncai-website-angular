@@ -19,6 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 import { TeamComponent } from './team/team.component';
 
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { TeamComponent } from './team/team.component';
     NgbModule.forRoot(),
     FormsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
