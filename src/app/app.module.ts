@@ -3,36 +3,21 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
-
-
-import { NavbarComponent } from './navbar/navbar.component';
-import { MainComponent } from './main/main.component';
-import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { ServicesComponent } from './services/services.component';
-import { HostingComponent } from './hosting/hosting.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
-import { AppRoutingModule } from './app-routing.module';
-import { FooterComponent } from './footer/footer.component';
-import { TeamComponent } from './team/team.component';
-
-
 import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './home/home.module';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MainComponent,
-    MainLayoutComponent,
-    ServicesComponent,
-    HostingComponent,
-    ProjectsComponent,
-    ContactComponent,
-    FooterComponent,
-    TeamComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

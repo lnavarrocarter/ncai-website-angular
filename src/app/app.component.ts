@@ -15,8 +15,8 @@ var navbarHeight = 0;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  private _router: Subscription;
+export class AppComponent  implements OnInit{
+    private _router: Subscription;
 
     constructor( private renderer : Renderer, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
     @HostListener('window:scroll', ['$event'])

@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  APIPATH : "https://server.ncai.cl",
+  PORT: 3100
 };
