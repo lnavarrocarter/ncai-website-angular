@@ -7,7 +7,7 @@ services:
     build: .
     #Hace un binding de nuestra carpeta local con la carpeta de nuestro contenedor donde
     environment:
-      - APIPORT='3100'
+      - APIPORT=''
       - APIPATH='https://api.ncai.cl/v1/'
     #tenemos la app
     volumes:

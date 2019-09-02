@@ -18,6 +18,6 @@ export class EmailService {
       subjet : `${form.name} te ha enviado una consulta desde la web...`,
       email: form.email
     };
-    return await this.Http.post(`${this.ENV.APIPATH}:${this.ENV.APIPORT}api/email/send`, body);
+    return await this.Http.post(`${this.ENV.APIPATH}api/email/send`, body);
   }
 }

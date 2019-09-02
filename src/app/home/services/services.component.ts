@@ -31,7 +31,7 @@ export class ServicesComponent implements OnInit {
       },
       {
         name : "Hosting & VPS",
-        description : "",
+        description : "Necesitas Alojar tu aplicacion con altos rendimientos, o tu pagina web de manera rapida y sencilla? pues nosotros te cotizamos y asesoramos con una disponibilidad 24/7/365",
         icon : "fa-server"
       }
     ]
