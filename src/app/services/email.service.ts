@@ -8,13 +8,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class EmailService {
   ENV: any  = environment;
   constructor(private Http: HttpClient) { }
+  
   async SendMail(form: any){
     let body = {
       html : `<h5>Te ha llegado una pregunta desde la web.</h5>
       <p> Nombre :${form.name} <br> 
       Email :${form.email} <br> 
-      Mensaje: <br> ${form.message}</p>`
+      Mensaje: <br> ${form.message}</p>`,
+      subjet : `${form.name} te ha enviado una consulta desde la web...`,
+      email: form.email
     };
-    return this.Http.post(`${this.ENV.APIPATH}:${this.ENV.PORT}/api/email/send`, body);
+    return await this.Http.post(`${this.ENV.APIPATH}:${this.ENV.APIPORT}api/email/send`, body);
   }
 }
