@@ -1,17 +1,17 @@
-version: '1'
-author: Luis Navarro Carter
+version: '3'
 services:
   authci:
     container_name: ncaiweb
     image: lnavarrocarter/ncaiweb
     #crea la imagen y el contenedor a partir de Dockerfile local
-    build: ./dist/ncai
+    build: .
     #Hace un binding de nuestra carpeta local con la carpeta de nuestro contenedor donde
     environment:
       - APIPORT='3100'
       - APIPATH='https://api.ncai.cl/v1/'
     #tenemos la app
     volumes:
-      - .:/ncai
+      - .:/app
     ports:
+      - "80:80"
       - "8080:8080"

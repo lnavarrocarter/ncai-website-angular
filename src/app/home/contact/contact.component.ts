@@ -8,6 +8,8 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  focus: any;
+  focus1: any;
   frases: string;
   form: { name: string, email: string, message: string};
   closeResult: string;

@@ -1,16 +1,13 @@
-#Dockerfile para contenedor de nodejs y nestjs 
-#Author: Luis Navarro Carter
-#Contact : lnavarro.carter@ncai.cl
-
-#From nos permite tener una imagen base para nuestro nuevo contenedor
-FROM node:10.15.3-alpine
-
-#instalamos Nest.Js
-RUN npm i -g @nestjs/cli
-
-#establece como directorio de trabajo nuestra carpeta 'my_nest_app'
-WORKDIR /ncai
-
-#exponemos el puerto 3100 que es el que usa nest para acceder a la app
-EXPOSE 3100
-CMD ["node", "main.js"]
+# Stage 0, "build-stage", based on Node.js, to build and compile the frontend
+FROM tiangolo/node-frontend:10 as build-stage
+WORKDIR /app
+COPY package*.json /app/
+RUN npm install
+COPY ./ /app/
+ARG configuration=production
+RUN npm run build -- --output-path=./dist/out --configuration $configuration
+# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+FROM nginx:1.15
+COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html
+# Copy the default nginx.conf provided by tiangolo/node-frontend
+COPY --from=build-stage /nginx.conf /etc/nginx/conf.d/default.conf
