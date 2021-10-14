@@ -13,11 +13,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image push DOCKER HUB
       env:
-        REGISTRY: ${{ secrets.DOCKER_HUB.DOCKER_REGISTRY }}
-        REPOSITORY: ${{ secrets.DOCKER_HUB.DOCKER_REPOSITORY }}
+        REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+        REPOSITORY: ${{ secrets.DOCKER_REPOSITORY }}
         IMAGE_TAG: ${{ github.sha }}
-        USER: ${{secrets.DOCKER_HUB.DOCKER_USER}}
-        TOKEN : ${{secrets.DOCKER_HUB.DOCKER_TOKEN}}
+        USER: ${{secrets.DOCKER_USER}}
+        TOKEN : ${{secrets.DOCKER_TOKEN}}
       run: |
         docker login $USER --password $TOKEN
         docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
