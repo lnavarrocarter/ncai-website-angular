@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image push DOCKER HUB
+      env:
+        REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+        REPOSITORY: ${{ secrets.DOCKER_REPOSITORY }}
+        IMAGE_TAG: ${{ github.sha }}
+        USER: ${{secrets.DOCKER_USER}}
+        TOKEN : ${{secrets.DOCKER_TOKEN}}
+      run: |
+        docker login $USER --password $TOKEN
+        docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
+        docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
