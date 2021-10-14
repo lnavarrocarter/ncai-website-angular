@@ -19,6 +19,6 @@ jobs:
         USER: ${{secrets.DOCKER_USER}}
         TOKEN : ${{secrets.DOCKER_TOKEN}}
       run: |
-        docker login $USER --password $TOKEN
-        docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
-        docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+        docker login -u lnavarrocarter --password 6a18361a-1768-4c6b-8363-0d94d7032732
+        docker build -t lnavarrocarter/ncai:$IMAGE_TAG .
+        docker push lnavarrocarter/ncai:$IMAGE_TAG
