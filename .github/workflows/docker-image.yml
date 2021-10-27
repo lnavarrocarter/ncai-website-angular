@@ -22,3 +22,41 @@ jobs:
         docker login -u lnavarrocarter --password 6a18361a-1768-4c6b-8363-0d94d7032732
         docker build -t lnavarrocarter/ncai:$IMAGE_TAG .
         docker push lnavarrocarter/ncai:$IMAGE_TAG
+  deploy:
+    name: Deploy
+    runs-on: self-hosted
+    needs: build
+    
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+      
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v2
+      with:
+        find: "ENV_DOCKER_IMAGE"
+        replace: "${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_REPOSITORY }}:${{ github.sha }}"
+        include: "manifests/**"
+        regex: false
+      
+
+    - uses: cschleiden/replace-tokens@v1
+      with:
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
+        files: '["**/*.yml"]'   
+      env:
+       API_HOST: ${{secrets.API_HOST}}
+       
+    - name: Kubernetes Deployment
+      env:
+         namespace: auth-desarrollo
+         deployment: auth360-dev
+         service: auth360-dev
+      run: |
+        cd manifests
+        
+        kubectl config set-context --current --namespace=$namespace
+        kubectl apply -f deployment.yml
+        kubectl rollout restart deploy $deployment -n $namespace
+        kubectl get all -n $namespace
