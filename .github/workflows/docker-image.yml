@@ -1,8 +1,6 @@
-name: Docker Image CI
+name: Produccion
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -19,9 +17,9 @@ jobs:
         USER: ${{secrets.DOCKER_USER}}
         TOKEN : ${{secrets.DOCKER_TOKEN}}
       run: |
-        docker login -u lnavarrocarter --password 6a18361a-1768-4c6b-8363-0d94d7032732
-        docker build -t lnavarrocarter/ncai:$IMAGE_TAG .
-        docker push lnavarrocarter/ncai:$IMAGE_TAG
+        docker login -u $REGISTRY --password $TOKEN
+        docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
+        docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
   deploy:
     name: Deploy
     runs-on: self-hosted
@@ -48,15 +46,16 @@ jobs:
       env:
        API_HOST: ${{secrets.API_HOST}}
        
-    - name: Kubernetes Deployment
+    - name: Create File
+      uses: finnp/create-file-action@latest
       env:
-         namespace: auth-desarrollo
-         deployment: auth360-dev
-         service: auth360-dev
-      run: |
-        cd manifests
-        
-        kubectl config set-context --current --namespace=$namespace
-        kubectl apply -f deployment.yml
-        kubectl rollout restart deploy $deployment -n $namespace
-        kubectl get all -n $namespace
+        FILE_NAME: ".kube/config"
+        FILE_BASE64: "ZWFzdGVyZWdnLWxvbAo="
+
+
+    - name: Trigger deploy
+      uses: phamquyhai/kubernetes-action@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      with:
+        args: apply /deployment.yaml
