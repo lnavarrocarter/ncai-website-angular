@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ncaiweb
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ncaiweb
+  template:
+    metadata:
+      labels:
+        app: ncaiweb
+    spec:g
+      containers:
+      - name: app
+        image: lnavarrocarter/ncai:latest
+        env:
+            - name: APIPATH
+              value: https://api.ncai.cl/
