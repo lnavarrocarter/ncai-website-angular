@@ -47,12 +47,6 @@ jobs:
         files: '["**/*.yml"]'   
       env:
        API_HOST: ${{secrets.API_HOST}}
-       
-    - name: Create File
-      uses: finnp/create-file-action@latest
-      env:
-        FILE_NAME: ".kube/config"
-        FILE_BASE64: "ZWFzdGVyZWdnLWxvbAo="
 
 
     - name: Trigger deploy
@@ -60,4 +54,4 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: 
+        args: apply -f .kube/deploy.yml
