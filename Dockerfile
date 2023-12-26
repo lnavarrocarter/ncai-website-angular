@@ -1,7 +1,7 @@
-FROM node:14.15-alpine as build-stage
+FROM node:14 as build-stage
 WORKDIR /app
 COPY package*.json /app/
-RUN npm install
+RUN npm install --force
 COPY ./ /app/
 ARG configuration=production
 RUN npm run build -- --output-path=./dist/out --configuration $configuration
