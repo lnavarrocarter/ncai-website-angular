@@ -25,13 +25,13 @@ jobs:
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
   deploy:
     name: Deploy
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: build
-    
+
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-      
+
     - name: Find and Replace
       uses: jacobtomlinson/gha-find-replace@v2
       with:
@@ -39,13 +39,13 @@ jobs:
         replace: "${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_REPOSITORY }}:${{ github.sha }}"
         include: ".kube/**"
         regex: false
-      
+
 
     - uses: cschleiden/replace-tokens@v1
       with:
         tokenPrefix: '#{'
         tokenSuffix: '}#'
-        files: '["**/*.yml"]'   
+        files: '["**/*.yml"]'
       env:
        API_HOST: ${{secrets.API_HOST}}
 
